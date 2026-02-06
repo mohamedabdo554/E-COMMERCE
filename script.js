@@ -2,6 +2,7 @@
 // INVENTORY MANAGEMENT
 // ====================
 let inventory = [];
+let idCounter = 0;
 
 // Load inventory from localStorage
 function loadInventory() {
@@ -9,6 +10,8 @@ function loadInventory() {
     if (saved) {
         inventory = JSON.parse(saved);
         updateInventoryCount();
+        // Set counter to max ID + 1 to avoid duplicates
+        idCounter = inventory.length > 0 ? Math.max(...inventory.map(item => item.id)) + 1 : 0;
     }
 }
 
@@ -20,7 +23,7 @@ function saveInventory() {
 // Add item to inventory
 function addToInventory(name, price) {
     const item = {
-        id: Date.now(),
+        id: idCounter++,
         name: name,
         price: price
     };
@@ -86,6 +89,7 @@ function openInventory() {
     modal.classList.add('active');
     renderInventory();
     document.body.style.overflow = 'hidden';
+    trapFocus(modal);
 }
 
 // Close inventory modal
@@ -226,7 +230,6 @@ function handleScrollAnimations() {
 // ====================
 function handleNavbarScroll() {
     const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
     
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
@@ -237,8 +240,6 @@ function handleNavbarScroll() {
         } else {
             navbar.style.boxShadow = 'none';
         }
-        
-        lastScroll = currentScroll;
     });
 }
 
@@ -412,11 +413,3 @@ function trapFocus(element) {
         }
     });
 }
-
-// Apply focus trap to modal when it opens
-const originalOpenInventory = openInventory;
-openInventory = function() {
-    originalOpenInventory();
-    const modal = document.getElementById('inventoryModal');
-    trapFocus(modal);
-};
