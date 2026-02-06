@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Level Up Your Gear - High-energy gaming e-commerce store">
+    <title>GameZone - Level Up Your Gear</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-text">GAME<span class="neon-accent">ZONE</span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#legendary-drops">Hardware</a></li>
+                    <li><a href="#power-ups">Accessories</a></li>
+                    <li><a href="#battle-stations">Gallery</a></li>
+                </ul>
+                <button class="inventory-btn" id="inventoryBtn">
+                    <span class="inventory-icon">🎮</span>
+                    <span class="inventory-text">Inventory</span>
+                    <span class="inventory-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-effect"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    LEVEL UP
+                    <span class="neon-accent">YOUR GEAR</span>
+                </h1>
+                <p class="hero-subtitle">Dominate the battlefield with pro-level gaming hardware</p>
+                <div class="hero-cta">
+                    <button class="btn-primary" onclick="scrollToSection('legendary-drops')">
+                        <span>START QUEST</span>
+                        <span class="btn-glow"></span>
+                    </button>
+                    <button class="btn-secondary" onclick="scrollToSection('power-ups')">
+                        <span>EXPLORE POWER-UPS</span>
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">10K+</span>
+                        <span class="stat-label">Players Equipped</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">500+</span>
+                        <span class="stat-label">Legendary Items</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-label">Support Squad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to Explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Legendary Drops Section -->
+    <section id="legendary-drops" class="legendary-drops">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon">⚡</span>
+                    LEGENDARY DROPS
+                    <span class="title-underline"></span>
+                </h2>
+                <p class="section-subtitle">Premium Gaming Hardware for Champions</p>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-rarity="legendary">
+                    <div class="product-badge">LEGENDARY</div>
+                    <div class="product-image">
+                        <div class="image-placeholder gpu">GPU</div>
+                        <div class="product-glow"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">RTX 4090 Ti</h3>
+                        <p class="product-desc">Ultimate Ray Tracing Beast</p>
+                        <div class="product-stats">
+                            <span>🔥 240 FPS</span>
+                            <span>⚡ 24GB VRAM</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$1,599</span>
+                            <button class="btn-add-inventory" onclick="addToInventory('RTX 4090 Ti', 1599)">
+                                ADD TO INVENTORY
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-rarity="epic">
+                    <div class="product-badge epic">EPIC</div>
+                    <div class="product-image">
+                        <div class="image-placeholder cpu">CPU</div>
+                        <div class="product-glow"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">AMD Ryzen 9 7950X3D</h3>
+                        <p class="product-desc">Gaming Performance King</p>
+                        <div class="product-stats">
+                            <span>🔥 16 Cores</span>
+                            <span>⚡ 5.7 GHz</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$699</span>
+                            <button class="btn-add-inventory" onclick="addToInventory('AMD Ryzen 9 7950X3D', 699)">
+                                ADD TO INVENTORY
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-rarity="legendary">
+                    <div class="product-badge">LEGENDARY</div>
+                    <div class="product-image">
+                        <div class="image-placeholder monitor">MONITOR</div>
+                        <div class="product-glow"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">ASUS ROG Swift OLED</h3>
+                        <p class="product-desc">Zero Lag Display</p>
+                        <div class="product-stats">
+                            <span>🔥 240Hz</span>
+                            <span>⚡ 0.03ms</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$999</span>
+                            <button class="btn-add-inventory" onclick="addToInventory('ASUS ROG Swift OLED', 999)">
+                                ADD TO INVENTORY
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-rarity="epic">
+                    <div class="product-badge epic">EPIC</div>
+                    <div class="product-image">
+                        <div class="image-placeholder ram">RAM</div>
+                        <div class="product-glow"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Corsair Dominator RGB</h3>
+                        <p class="product-desc">Speed & Style Combo</p>
+                        <div class="product-stats">
+                            <span>🔥 64GB</span>
+                            <span>⚡ 6000MHz</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$399</span>
+                            <button class="btn-add-inventory" onclick="addToInventory('Corsair Dominator RGB', 399)">
+                                ADD TO INVENTORY
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Power-Ups Section -->
+    <section id="power-ups" class="power-ups">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon">🎯</span>
+                    POWER-UPS
+                    <span class="title-underline"></span>
+                </h2>
+                <p class="section-subtitle">Essential Accessories for Peak Performance</p>
+            </div>
+            <div class="accessories-grid">
+                <!-- Accessory 1 -->
+                <div class="accessory-card">
+                    <div class="accessory-icon">🎧</div>
+                    <h3>Elite Headset</h3>
+                    <p>7.1 Surround Sound</p>
+                    <span class="accessory-price">$199</span>
+                    <button class="btn-add-inventory-small" onclick="addToInventory('Elite Headset', 199)">
+                        ADD TO INVENTORY
+                    </button>
+                </div>
+
+                <!-- Accessory 2 -->
+                <div class="accessory-card">
+                    <div class="accessory-icon">🖱️</div>
+                    <h3>Pro Gaming Mouse</h3>
+                    <p>20,000 DPI Precision</p>
+                    <span class="accessory-price">$149</span>
+                    <button class="btn-add-inventory-small" onclick="addToInventory('Pro Gaming Mouse', 149)">
+                        ADD TO INVENTORY
+                    </button>
+                </div>
+
+                <!-- Accessory 3 -->
+                <div class="accessory-card">
+                    <div class="accessory-icon">⌨️</div>
+                    <h3>Mechanical Keyboard</h3>
+                    <p>RGB Per-Key Lighting</p>
+                    <span class="accessory-price">$179</span>
+                    <button class="btn-add-inventory-small" onclick="addToInventory('Mechanical Keyboard', 179)">
+                        ADD TO INVENTORY
+                    </button>
+                </div>
+
+                <!-- Accessory 4 -->
+                <div class="accessory-card">
+                    <div class="accessory-icon">🪑</div>
+                    <h3>Gaming Chair</h3>
+                    <p>Ergonomic Throne</p>
+                    <span class="accessory-price">$449</span>
+                    <button class="btn-add-inventory-small" onclick="addToInventory('Gaming Chair', 449)">
+                        ADD TO INVENTORY
+                    </button>
+                </div>
+
+                <!-- Accessory 5 -->
+                <div class="accessory-card">
+                    <div class="accessory-icon">🎮</div>
+                    <h3>Elite Controller</h3>
+                    <p>Customizable Buttons</p>
+                    <span class="accessory-price">$179</span>
+                    <button class="btn-add-inventory-small" onclick="addToInventory('Elite Controller', 179)">
+                        ADD TO INVENTORY
+                    </button>
+                </div>
+
+                <!-- Accessory 6 -->
+                <div class="accessory-card">
+                    <div class="accessory-icon">🔊</div>
+                    <h3>Streaming Setup</h3>
+                    <p>Mic + Camera Kit</p>
+                    <span class="accessory-price">$299</span>
+                    <button class="btn-add-inventory-small" onclick="addToInventory('Streaming Setup', 299)">
+                        ADD TO INVENTORY
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Battle Stations Gallery -->
+    <section id="battle-stations" class="battle-stations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon">🏆</span>
+                    BATTLE STATIONS
+                    <span class="title-underline"></span>
+                </h2>
+                <p class="section-subtitle">Legendary Setups from Our Community</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-setup="1">
+                    <div class="gallery-image">
+                        <div class="image-placeholder-gallery setup1">Setup 1</div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>The Commander's Den</h4>
+                        <p>Triple Monitor Domination</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-setup="2">
+                    <div class="gallery-image">
+                        <div class="image-placeholder-gallery setup2">Setup 2</div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>RGB Paradise</h4>
+                        <p>Full Spectrum Lighting</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-setup="3">
+                    <div class="gallery-image">
+                        <div class="image-placeholder-gallery setup3">Setup 3</div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>Minimalist Pro</h4>
+                        <p>Clean & Powerful</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-setup="4">
+                    <div class="gallery-image">
+                        <div class="image-placeholder-gallery setup4">Setup 4</div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>Streamer's Haven</h4>
+                        <p>Production Ready</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-setup="5">
+                    <div class="gallery-image">
+                        <div class="image-placeholder-gallery setup5">Setup 5</div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>The Fortress</h4>
+                        <p>Ultimate Gaming Cave</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-setup="6">
+                    <div class="gallery-image">
+                        <div class="image-placeholder-gallery setup6">Setup 6</div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <h4>Mobile Command</h4>
+                        <p>Portable Powerhouse</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GAMEZONE</h3>
+                    <p>Level up your gaming experience with pro-grade hardware and accessories.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#legendary-drops">Hardware</a></li>
+                        <li><a href="#power-ups">Accessories</a></li>
+                        <li><a href="#battle-stations">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Discord</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Twitch</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GameZone. All rights reserved. Game on! 🎮</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inventory Modal -->
+    <div id="inventoryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>YOUR INVENTORY</h2>
+                <button class="modal-close" onclick="closeInventory()">&times;</button>
+            </div>
+            <div class="modal-body" id="inventoryItems">
+                <p class="empty-inventory">Your inventory is empty. Start adding items!</p>
+            </div>
+            <div class="modal-footer">
+                <div class="inventory-total">
+                    <span>Total:</span>
+                    <span id="inventoryTotal">$0</span>
+                </div>
+                <button class="btn-primary" onclick="checkout()">
+                    <span>PROCEED TO CHECKOUT</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
